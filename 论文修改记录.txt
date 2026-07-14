@@ -1,9 +1,0 @@
-v1
-论文里面所有格Geometric Origin of Slater”s，应该是一个'
-作者姓名和邮箱
-投稿的附件在哪里？All code, data, and a reproduction script are provided as supplementary material.
-公式里也有两撇，是不是错误  (n′′,l′′), 
-σ = 0.5000 为什么后面是3个0
-文献的编号顺序
- The same-subshell case (nl = n′′l′′) gives σ = 0.5000 exactly by symmetry; we discuss the shielding efficiency bridge to Slater”s 0.35. 这句话的意思是？
-
