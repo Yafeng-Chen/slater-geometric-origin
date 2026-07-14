@@ -1,5 +1,5 @@
-- Slater's shielding constants derived from radial electron overlap probability
-- Hydrogenic wavefunctions yield sigma = 0.359, 0.862, 0.979 (within 3% of empirical)
-- Same-subshell shielding sigma = 0.5 follows exactly from symmetry
-- Complete Z = 1-118 feature set with geometrically derived effective nuclear charge
-- Formation-energy ML benchmark matches empirically-tabulated feature accuracy
+﻿- Slater's empirical shielding constants arise from the radial overlap probability P(r_inner < r_outer) computed from hydrogenic wavefunctions
+- Geometric values sigma = 0.359, 0.862, 0.979 match Slater's 0.35, 0.85, 1.00 to within 3%
+- Same-subshell sigma = 0.50 (radial symmetry) reconciled with 0.35 via angular-overlap decomposition; f = 1/3 derived analytically for all p- and d-orbital pairs
+- Complete Z = 1-118 feature set with geometrically derived effective nuclear charge, covering elements for which experimental data are unavailable
+- Formation-energy ML benchmark: geometrically derived features statistically equivalent to empirically-tabulated features (MAE = 0.351 vs. 0.322 eV/atom)
