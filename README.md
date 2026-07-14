@@ -1,11 +1,11 @@
-ï»¿# Periodic Table Atomic Feature Set (Z = 1â€“118)
+# Periodic Table Atomic Feature Set (Z = 1¨C118)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Elements: 118](https://img.shields.io/badge/Elements-1..118-blue)](periodic_table_features.csv)
 
-**Complete atomic features for Z = 1â€“118, derived from first-principles geometric analysis of Slater shielding constants. No experimental fitting, no DFT calculationsâ€”only the atomic number Z required.**
+**Complete atomic features for Z = 1¨C118, derived from first-principles geometric analysis of Slater shielding constants. No experimental fitting, no DFT calculations¡ªonly the atomic number Z required.**
 
-Supplementary material for: *Chen, Yafeng. "Geometric Interpretation of Slater's Shielding Constants." 2026.*
+Supplementary material for: *Chen, Yafeng. "A Geometric Interpretation of Slater's Shielding Constants." 2026.*
 
 ---
 
@@ -22,7 +22,7 @@ df.head()
 | 1 | H | Hydrogen | 1.000 | 1s | 13.60 | 13.60 | 0.0% |
 | 26 | Fe | Iron | 3.792 | 4s | 12.22 | 7.90 | 54.7% |
 | 92 | U | Uranium | 4.593 | 7s | 5.85 | 6.19 | 5.5% |
-| 118 | Og | Oganesson | 9.948 | 7p | 27.46 | â€” | â€” |
+| 118 | Og | Oganesson | 9.948 | 7p | 27.46 | ¡ª | ¡ª |
 
 ---
 
@@ -46,21 +46,21 @@ df.head()
 
 ## Accuracy
 
-Comparison with NIST experimental data (Z = 1â€“103):
+Comparison with NIST experimental data (Z = 1¨C103):
 
 | Error range | Count |
 |-------------|:---:|
 | < 10% | **48** |
-| 10â€“25% | 10 |
-| 25â€“50% | 5 |
-| 50â€“100% | 9 |
+| 10¨C25% | 10 |
+| 25¨C50% | 5 |
+| 50¨C100% | 9 |
 | > 100% | 31 |
 
 **Median error: 13.3%.**
 
 ### Strongest performers
 
-Actinides and transuranium elements (Z = 87â€“102)â€”precisely where experimental data are scarce and DFT is expensive:
+Actinides and transuranium elements (Z = 87¨C102)¡ªprecisely where experimental data are scarce and DFT is expensive:
 
 | Element | Z | Predicted IE (eV) | Experimental IE (eV) | Error |
 |---------|---|:---:|:---:|:---:|
@@ -73,8 +73,8 @@ Actinides and transuranium elements (Z = 87â€“102)â€”precisely where experimenta
 
 ### Known limitations
 
-- **Noble gases** (Ne, Ar, Kr, Xe, Rn): hydrogenic formula cannot capture filled-shell stability â†’ 200â€“400% error
-- **Pd** (Z = 46): anomalous [Kr] 4dÂ¹â° configuration; Slater classification places outermost electron in 4d while physical ionization occurs from 5s
+- **Noble gases** (Ne, Ar, Kr, Xe, Rn): hydrogenic formula cannot capture filled-shell stability ¡ú 200¨C400% error
+- **Pd** (Z = 46): anomalous [Kr] 4d1? configuration; Slater classification places outermost electron in 4d while physical ionization occurs from 5s
 - The hydrogenic IE formula is a crude approximation. Users should treat `Z_eff` as an input feature and train their own regression model rather than using `IE_predicted_eV` directly.
 
 ---
@@ -88,11 +88,11 @@ Slater's rules applied with shielding constants derived from **radial overlap ge
 | Shielding type | Derived value | Traditional empirical |
 |----------------|:---:|:---:|
 | Same-n, different-l | 0.359 | 0.35 |
-| nâˆ’1 shell | 0.862 | 0.85 |
-| Deep (n â‰¤ n_outerâˆ’2) | 0.979 | 1.00 |
+| n?1 shell | 0.862 | 0.85 |
+| Deep (n ¡Ü n_outer?2) | 0.979 | 1.00 |
 | Same subshell | 0.350* | 0.35 |
 
-\* Radial symmetry gives Ïƒ = 0.5000; angular-overlap decomposition bridges this to the empirical 0.35. See paper Appendix A for the full derivation.
+\* Radial symmetry gives ¦Ò = 0.5000; angular-overlap decomposition bridges this to the empirical 0.35. See paper Appendix A for the full derivation.
 
 ### Effective nuclear charge
 
@@ -102,7 +102,7 @@ $$Z_{\text{eff}} = Z - \sum_i n_i \sigma_i$$
 
 $$I = 13.598 \times \left(\frac{Z_{\text{eff}}}{n_{\text{outer}}}\right)^2 \; \text{eV}$$
 
-> âš ï¸  This is the hydrogenic approximation. Multi-electron correlation effects are not captured.
+> ??  This is the hydrogenic approximation. Multi-electron correlation effects are not captured.
 
 ---
 
@@ -110,26 +110,26 @@ $$I = 13.598 \times \left(\frac{Z_{\text{eff}}}{n_{\text{outer}}}\right)^2 \; \t
 
 | Source | Coverage | Heavy elements | Physical basis |
 |--------|:---:|:---:|:---:|
-| NIST experiment | Z = 1â€“103 (partial) | Incomplete, inconsistent | Experiment |
-| Materials Project / OQMD | Z = 1â€“83 (mainly) | Mostly skipped | DFT |
-| **This table** | **Z = 1â€“118 (full)** | âœ… Uniform method | **Geometric derivation** |
+| NIST experiment | Z = 1¨C103 (partial) | Incomplete, inconsistent | Experiment |
+| Materials Project / OQMD | Z = 1¨C83 (mainly) | Mostly skipped | DFT |
+| **This table** | **Z = 1¨C118 (full)** | ? Uniform method | **Geometric derivation** |
 
 ---
 
 ## Repository structure
 
 ```
-â”œâ”€â”€ slater_geometric_origin.tex       â† Paper LaTeX source
-â”œâ”€â”€ periodic_table_features.csv       â† Z = 1â€“118 feature table
-â”œâ”€â”€ derive_slater.py                  â† Shielding constant derivation
-â”œâ”€â”€ generate_feature_table.py         â† Feature table generator
-â”œâ”€â”€ validate_derived_slater.py        â† Derived vs. empirical comparison
-â”œâ”€â”€ clementi_validate.py              â† SCF Z_eff validation
-â”œâ”€â”€ sn_euv_validate.py                â† Snâ´âº IE validation
-â”œâ”€â”€ benchmark.py                      â† Materials ML benchmark
-â”œâ”€â”€ generate_figure1.py               â† Figure 1 schematic generator
-â”œâ”€â”€ highlights.txt                    â† Paper highlights
-â””â”€â”€ README.md
+©À©¤©¤ slater_geometric_origin.tex       ¡û Paper LaTeX source
+©À©¤©¤ periodic_table_features.csv       ¡û Z = 1¨C118 feature table
+©À©¤©¤ derive_slater.py                  ¡û Shielding constant derivation
+©À©¤©¤ generate_feature_table.py         ¡û Feature table generator
+©À©¤©¤ validate_derived_slater.py        ¡û Derived vs. empirical comparison
+©À©¤©¤ clementi_validate.py              ¡û SCF Z_eff validation
+©À©¤©¤ sn_euv_validate.py                ¡û Sn?? IE validation
+©À©¤©¤ benchmark.py                      ¡û Materials ML benchmark
+©À©¤©¤ generate_figure1.py               ¡û Figure 1 schematic generator
+©À©¤©¤ highlights.txt                    ¡û Paper highlights
+©¸©¤©¤ README.md
 ```
 
 ## Citation
@@ -137,9 +137,9 @@ $$I = 13.598 \times \left(\frac{Z_{\text{eff}}}{n_{\text{outer}}}\right)^2 \; \t
 If you use this feature table, please cite:
 
 ```
-Chen, Yafeng. "Geometric Interpretation of Slater's Shielding Constants." 2026.
+Chen, Yafeng. "A Geometric Interpretation of Slater's Shielding Constants." 2026.
 ```
 
 ## License
 
-MIT License â€” free to use, modify, and distribute for both academic and commercial purposes.
+MIT License ¡ª free to use, modify, and distribute for both academic and commercial purposes.
