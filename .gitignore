@@ -1,0 +1,11 @@
+﻿*.aux
+*.log
+*.out
+*.bak
+*.synctex.gz
+output.txt
+_review_dump.txt
+__pycache__/
+*.pyc
+cover_letter.txt
+review_report.md
